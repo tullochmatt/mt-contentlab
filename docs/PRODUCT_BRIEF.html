@@ -1,0 +1,141 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product brief · MT ContentLab</title><link rel="icon" href="../favicon.svg" type="image/svg+xml"><style>
+:root{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#274049;background:#f6f8f6}*{box-sizing:border-box}body{margin:0}a{color:#087965}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#162f39;color:#fff;padding:18px max(20px,calc((100vw - 920px)/2));font-size:13px;font-weight:700}nav a{color:#b1e6d1;text-decoration:none}nav a:hover{text-decoration:underline}.wrap{max-width:920px;margin:0 auto;padding:48px 24px 80px}.eyebrow{letter-spacing:1.8px;font-size:11px;color:#168a73;font-weight:800}.paper{background:white;border:1px solid #e1e8e3;box-shadow:0 8px 30px rgba(19,49,49,.04);border-radius:14px;padding:clamp(22px,5vw,56px);margin-top:16px}.paper h1{margin:0 0 22px;font-size:30px;color:#18323c;letter-spacing:-1px}.paper h2{font-size:20px;margin:35px 0 14px;padding-top:15px;border-top:1px solid #ebefec;color:#21414b}.paper h3{font-size:16px;margin-top:27px;color:#23564f}.paper p,.paper li{font-size:14px;line-height:1.78;color:#50666d}.paper ul,.paper ol{padding-left:24px}.paper code{background:#eff5f2;border-radius:3px;padding:2px 5px;font-size:.92em}.paper pre{white-space:pre-wrap;padding:17px;background:#172f38;color:#d9f5e6;border-radius:7px;overflow:auto}.paper pre code{color:inherit;background:transparent}.paper table{border-collapse:collapse;width:100%;font-size:12px;margin:20px 0}.paper td,.paper th{text-align:left;vertical-align:top;padding:12px;border:1px solid #dde6e0;line-height:1.55}.paper th{background:#f2f6f3}.paper td{color:#566c72}blockquote{border-left:3px solid #8bcfb5;margin:18px 0;padding:5px 18px;background:#f7faf8}footer{font-size:11px;color:#92a39e;margin-top:26px;text-align:center}@media(max-width:600px){.wrap{padding:25px 10px 55px}.paper table{display:block;overflow:auto}}
+</style></head><body><nav><span>▤ MT ContentLab</span><a href="../index.html">← Back to workspace</a></nav><div class="wrap"><div class="eyebrow">THE PRODUCT THINKING</div><article class="paper"><h1>Product brief · MT ContentLab</h1>
+<h2>Problem</h2>
+<p>Small content teams often track drafts, review status, metadata, and publishing plans in disconnected tools. This can obscure ownership, complicate findability, and make it hard to understand what needs attention. The prototype investigates whether a single, lightweight workspace can make these activities easier to understand.</p>
+<p><strong>This is a hypothetical product problem</strong>, not a claim based on quantified customer research.</p>
+<h2>Users and jobs to be done</h2>
+<table>
+<thead>
+<tr>
+  <th>Persona</th>
+  <th>Job to be done</th>
+  <th>What this prototype demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Content editor</td>
+  <td>Create and revise content without losing track of metadata</td>
+  <td>Structured authoring form and preview</td>
+</tr>
+<tr>
+  <td>Managing editor</td>
+  <td>Identify content needing review</td>
+  <td>Review queue, status counts and filters</td>
+</tr>
+<tr>
+  <td>Content operations partner</td>
+  <td>Understand portfolio status and find specific content</td>
+  <td>Search, status distribution, and content taxonomy</td>
+</tr>
+</tbody>
+</table>
+<h2>V1 product goal</h2>
+<p>Demonstrate an understandable authoring-to-review workflow using a small structured content model. The experience should be usable without an account, server, onboarding call, or realistic enterprise integration.</p>
+<h2>Assumptions to validate</h2>
+<ol>
+<li>Editors benefit from a visible, consistent workflow status for every record.</li>
+<li>Type, section, owner, and tags are enough metadata to demonstrate useful filtering.</li>
+<li>Basic quality requirements before review or scheduling can prevent incomplete handoffs.</li>
+<li>A live reader preview can make authoring more concrete without a full page-rendering system.</li>
+</ol>
+<h2>Proposed success metrics (not measured results)</h2>
+<ul>
+<li><strong>Task completion rate:</strong> Can test participants create a draft, edit metadata, and put it in review without assistance?</li>
+<li><strong>Time to find content:</strong> How quickly can participants locate a record by title or topic?</li>
+<li><strong>Review readiness:</strong> What fraction of review submissions pass required-field validation on the first attempt?</li>
+<li><strong>Workflow comprehension:</strong> Can participants accurately explain the difference between draft, review, scheduled, and published states?</li>
+<li><strong>Perceived clarity:</strong> Brief qualitative feedback from editors on what feels obvious vs. confusing.</li>
+</ul>
+<h2>Scope</h2>
+<p><strong>Included:</strong> sample content, structured authoring, client-side records, title/metadata search, status filters, queue, simple preview, import/export, responsive layout.</p>
+<p><strong>Excluded:</strong> accounts, roles/permissions, collaboration, revision history, real publishing, notifications, media library, full-text indexing, API integrations, scheduled jobs, analytics, and AI-generated content.</p>
+<h2>Workflow model</h2>
+<pre><code class="language-text">Draft → In review → Scheduled → Published
+  ↑         ↓           ↓
+  └─────────┴───────────┘ (edits or returns are allowed)
+</code></pre>
+<p>This diagram is conceptual. In v1, a user may choose any status directly; there is no enforced transition graph or role-based approval. The editor requires a title for every record, summary/body for any non-draft status, and a planned publish date when the status is Scheduled.</p>
+<h2>Content model</h2>
+<table>
+<thead>
+<tr>
+  <th>Field</th>
+  <th>Type</th>
+  <th>Why it exists</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>id</td>
+  <td>String</td>
+  <td>Stable local record identifier</td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>String</td>
+  <td>Reader-facing label and primary search field</td>
+</tr>
+<tr>
+  <td>slug</td>
+  <td>String</td>
+  <td>Human-readable future URL identifier; no live route is created</td>
+</tr>
+<tr>
+  <td>type</td>
+  <td>Enum</td>
+  <td>Distinguish articles, guides, resources, announcements</td>
+</tr>
+<tr>
+  <td>section</td>
+  <td>Enum</td>
+  <td>Topical organization</td>
+</tr>
+<tr>
+  <td>summary</td>
+  <td>Text</td>
+  <td>Short description for discovery and previews</td>
+</tr>
+<tr>
+  <td>body</td>
+  <td>Plain text</td>
+  <td>Core authored content in this prototype</td>
+</tr>
+<tr>
+  <td>owner</td>
+  <td>String</td>
+  <td>Responsibility and review triage</td>
+</tr>
+<tr>
+  <td>tags</td>
+  <td>String array</td>
+  <td>Flexible supplemental taxonomy</td>
+</tr>
+<tr>
+  <td>status</td>
+  <td>Enum</td>
+  <td>Workflow state</td>
+</tr>
+<tr>
+  <td>publishAt</td>
+  <td>ISO date or null</td>
+  <td>Planned timing metadata, not an actual scheduler</td>
+</tr>
+<tr>
+  <td>updatedAt</td>
+  <td>ISO timestamp</td>
+  <td>Sorting and recency context</td>
+</tr>
+</tbody>
+</table>
+<h2>Usability considerations</h2>
+<ul>
+<li>Prioritize a familiar document list; expose important status information without opening the editor.</li>
+<li>Keep status changes deliberate inside the editing form rather than adding unconfirmed one-click transitions.</li>
+<li>Use clear language about what the demo <em>does not</em> do (particularly publishing and persistence).</li>
+<li>Allow a way to export local edits so evaluators can preserve their changes.</li>
+</ul>
+<h2>Next research step</h2>
+<p>Conduct 3–5 short usability walkthroughs using scripted tasks, record observable friction, and revise the highest-impact problem before extending the feature set.</p>
+</article><footer>Independent product management portfolio prototype · Fictional content and workflows</footer></div></body></html>

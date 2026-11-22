@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Decision log · MT ContentLab</title><link rel="icon" href="../favicon.svg" type="image/svg+xml"><style>
+:root{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#274049;background:#f6f8f6}*{box-sizing:border-box}body{margin:0}a{color:#087965}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#162f39;color:#fff;padding:18px max(20px,calc((100vw - 920px)/2));font-size:13px;font-weight:700}nav a{color:#b1e6d1;text-decoration:none}nav a:hover{text-decoration:underline}.wrap{max-width:920px;margin:0 auto;padding:48px 24px 80px}.eyebrow{letter-spacing:1.8px;font-size:11px;color:#168a73;font-weight:800}.paper{background:white;border:1px solid #e1e8e3;box-shadow:0 8px 30px rgba(19,49,49,.04);border-radius:14px;padding:clamp(22px,5vw,56px);margin-top:16px}.paper h1{margin:0 0 22px;font-size:30px;color:#18323c;letter-spacing:-1px}.paper h2{font-size:20px;margin:35px 0 14px;padding-top:15px;border-top:1px solid #ebefec;color:#21414b}.paper h3{font-size:16px;margin-top:27px;color:#23564f}.paper p,.paper li{font-size:14px;line-height:1.78;color:#50666d}.paper ul,.paper ol{padding-left:24px}.paper code{background:#eff5f2;border-radius:3px;padding:2px 5px;font-size:.92em}.paper pre{white-space:pre-wrap;padding:17px;background:#172f38;color:#d9f5e6;border-radius:7px;overflow:auto}.paper pre code{color:inherit;background:transparent}.paper table{border-collapse:collapse;width:100%;font-size:12px;margin:20px 0}.paper td,.paper th{text-align:left;vertical-align:top;padding:12px;border:1px solid #dde6e0;line-height:1.55}.paper th{background:#f2f6f3}.paper td{color:#566c72}blockquote{border-left:3px solid #8bcfb5;margin:18px 0;padding:5px 18px;background:#f7faf8}footer{font-size:11px;color:#92a39e;margin-top:26px;text-align:center}@media(max-width:600px){.wrap{padding:25px 10px 55px}.paper table{display:block;overflow:auto}}
+</style></head><body><nav><span>▤ MT ContentLab</span><a href="../index.html">← Back to workspace</a></nav><div class="wrap"><div class="eyebrow">DECISIONS &amp; TRADEOFFS</div><article class="paper"><h1>Product decision log</h1>
+<p>The choices below are <strong>prototype decisions</strong>, not workplace project disclosures.</p>
+<h2>001 — Build static first</h2>
+<p><strong>Decision:</strong> Use HTML, CSS and JavaScript with <code>localStorage</code> rather than add a backend.</p>
+<p><strong>Why:</strong> The immediate goal is to demonstrate a believable workflow in a public portfolio. No account, setup, database, or ongoing hosting infrastructure is required. A static build can run on GitHub Pages.</p>
+<p><strong>Tradeoff:</strong> No shared data, server-side audit trail, permissions, or real publishing. A browser reset clears local records unless exported.</p>
+<p><strong>Revisit when:</strong> Collaboration and persistence become necessary to validate the core value proposition.</p>
+<h2>002 — Start with a compact content model</h2>
+<p><strong>Decision:</strong> Define four types, four sections, and a small set of common authoring fields.</p>
+<p><strong>Why:</strong> A manageable content model makes filtering and workflow use cases visible without burying the viewer in dozens of fields.</p>
+<p><strong>Tradeoff:</strong> The model does not support localization, nested components, media, schemas by type, or content references.</p>
+<p><strong>Revisit when:</strong> Research shows a concrete need for content reuse, conditional fields, or different editorial domains.</p>
+<h2>003 — Use flexible status selection with readiness checks</h2>
+<p><strong>Decision:</strong> Allow any status to be selected, while requiring a title for all content, body and summary for non-drafts, and a date for Scheduled.</p>
+<p><strong>Why:</strong> The portfolio demo should show basic validation without inventing complex stakeholder approvals.</p>
+<p><strong>Tradeoff:</strong> A user can mark an item Published without a real review; this would not be acceptable in many production workflows.</p>
+<p><strong>Revisit when:</strong> Defining roles, permissions, audit history, and formal review rules.</p>
+<h2>004 — Do not simulate an AI feature</h2>
+<p><strong>Decision:</strong> Exclude AI-assisted tagging/summarization from v1.</p>
+<p><strong>Why:</strong> A button that produces hard-coded &quot;AI&quot; output would be misleading, and integrating an API would require secrets, cost controls, and error handling beyond this stage.</p>
+<p><strong>Tradeoff:</strong> Does not yet demonstrate AI feature design. This is deliberately listed as a future discovery opportunity rather than a completed capability.</p>
+<p><strong>Revisit when:</strong> A specific use case can be evaluated with quality measures and human review.</p>
+<h2>005 — Fictional data only</h2>
+<p><strong>Decision:</strong> Use a fictional workspace and invented records.</p>
+<p><strong>Why:</strong> Enables public demonstration without exposing proprietary content, internal software, real editorial performance metrics, or employer-specific workflows.</p>
+</article><footer>Independent product management portfolio prototype · Fictional content and workflows</footer></div></body></html>

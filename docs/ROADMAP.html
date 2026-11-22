@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product roadmap · MT ContentLab</title><link rel="icon" href="../favicon.svg" type="image/svg+xml"><style>
+:root{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#274049;background:#f6f8f6}*{box-sizing:border-box}body{margin:0}a{color:#087965}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#162f39;color:#fff;padding:18px max(20px,calc((100vw - 920px)/2));font-size:13px;font-weight:700}nav a{color:#b1e6d1;text-decoration:none}nav a:hover{text-decoration:underline}.wrap{max-width:920px;margin:0 auto;padding:48px 24px 80px}.eyebrow{letter-spacing:1.8px;font-size:11px;color:#168a73;font-weight:800}.paper{background:white;border:1px solid #e1e8e3;box-shadow:0 8px 30px rgba(19,49,49,.04);border-radius:14px;padding:clamp(22px,5vw,56px);margin-top:16px}.paper h1{margin:0 0 22px;font-size:30px;color:#18323c;letter-spacing:-1px}.paper h2{font-size:20px;margin:35px 0 14px;padding-top:15px;border-top:1px solid #ebefec;color:#21414b}.paper h3{font-size:16px;margin-top:27px;color:#23564f}.paper p,.paper li{font-size:14px;line-height:1.78;color:#50666d}.paper ul,.paper ol{padding-left:24px}.paper code{background:#eff5f2;border-radius:3px;padding:2px 5px;font-size:.92em}.paper pre{white-space:pre-wrap;padding:17px;background:#172f38;color:#d9f5e6;border-radius:7px;overflow:auto}.paper pre code{color:inherit;background:transparent}.paper table{border-collapse:collapse;width:100%;font-size:12px;margin:20px 0}.paper td,.paper th{text-align:left;vertical-align:top;padding:12px;border:1px solid #dde6e0;line-height:1.55}.paper th{background:#f2f6f3}.paper td{color:#566c72}blockquote{border-left:3px solid #8bcfb5;margin:18px 0;padding:5px 18px;background:#f7faf8}footer{font-size:11px;color:#92a39e;margin-top:26px;text-align:center}@media(max-width:600px){.wrap{padding:25px 10px 55px}.paper table{display:block;overflow:auto}}
+</style></head><body><nav><span>▤ MT ContentLab</span><a href="../index.html">← Back to workspace</a></nav><div class="wrap"><div class="eyebrow">WHAT COMES NEXT</div><article class="paper"><h1>Prioritized roadmap · MT ContentLab</h1>
+<p>This is an illustrative product roadmap, not a commitment to implement every feature. Priorities reflect the portfolio demo's goals and assumptions, not a validated customer backlog.</p>
+<h2>Now — v1: Make content workflows tangible (implemented)</h2>
+<ul>
+<li>[x] Fictional sample content and content model</li>
+<li>[x] Create, edit, and delete records</li>
+<li>[x] Search, filter, sort</li>
+<li>[x] Overview and review queue</li>
+<li>[x] Reader preview and workflow validation</li>
+<li>[x] Browser persistence and JSON import/export</li>
+<li>[x] Responsive static deployment files</li>
+</ul>
+<h2>Next — Improve editorial confidence</h2>
+<h3>P1 · Save-time field validation and completeness score</h3>
+<p><strong>User story:</strong> As an editor, I want to know which required fields are missing before I submit an item for review.</p>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li>Missing/invalid fields are named next to their inputs.</li>
+<li>The form shows a clear, explainable completeness indicator.</li>
+<li>Drafts can still be saved with incomplete optional fields.</li>
+<li>Validation rules are documented per status and content type.</li>
+</ul>
+<p><strong>Why next:</strong> Most directly addresses avoidable review handoffs.</p>
+<h3>P1 · Revision history (local demo)</h3>
+<p><strong>User story:</strong> As an editor, I want to inspect previous revisions so I can understand what changed.</p>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li>Saving a record produces a dated revision snapshot.</li>
+<li>A record view can compare the current version with a prior one.</li>
+<li>The UI distinguishes restoring a version from publishing it.</li>
+</ul>
+<p><strong>Why next:</strong> Reveals a common editorial workflow pain point while staying within the scope of a browser prototype.</p>
+<h3>P2 · Metadata-focused search</h3>
+<p><strong>User story:</strong> As a content operations partner, I want precise filters for section, owner, tags and status to find records without knowing the exact title.</p>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li>Multiple filters can be combined.</li>
+<li>Matching records and active filters are always visible.</li>
+<li>Clear filters returns the complete list.</li>
+<li>Search matching rules and empty states are understandable.</li>
+</ul>
+<h2>Later — Validate platform extensions</h2>
+<h3>P2 · Multi-channel preview</h3>
+<p>Compare the same structured record as a web article, mobile card and resource listing. Evaluate which shared fields support reuse and which need channel-specific overrides.</p>
+<h3>P3 · AI-assisted metadata suggestions (research first)</h3>
+<p>Explore whether an LLM can suggest content tags or summaries with human review. Define accuracy, accept/reject rate, cost, and privacy requirements <strong>before</strong> implementation. Never silently publish or overwrite editorial content.</p>
+<h3>P3 · Authenticated backend and collaboration</h3>
+<p>Only if the research validates it: add accounts, role-based reviews, shared persistent storage, audit events, and real publishing integrations.</p>
+<h2>Suggested GitHub issues</h2>
+<p>Create one GitHub Issue per numbered roadmap item. Labels could include <code>discovery</code>, <code>ux</code>, <code>workflow</code>, <code>content-model</code>, <code>P1</code>, <code>P2</code>, and <code>P3</code>. Tie each issue to a user problem and acceptance criteria rather than a technology-only task.</p>
+</article><footer>Independent product management portfolio prototype · Fictional content and workflows</footer></div></body></html>
